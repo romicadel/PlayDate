@@ -1,0 +1,53 @@
+h1{
+    color:$fontColor; 
+    font-size: $fontSizeBig; 
+    font-family: $fontFamily;
+    font-weight: 600; 
+    text-transform: capitalize;
+    }
+h2{
+    color:$fontColor; 
+    font-size: calc(1em + 3vw) ; 
+    font-weight: 400;
+    font-family: $fontFamily;
+    font-weight: bold;
+}
+h3{
+    color:$fontColor;
+    font-size: ($fontSizeBig) - 1; 
+    font-weight: 200;
+    font-family: $fontFamily;
+}
+h4{
+    color:$fontColor;
+    font-size: ($standardp) - 2; 
+    font-family: $fontFamily;
+}
+h5{
+    color:$fontColor;
+    font-size: ($standardp) - 4; 
+    font-family: $fontFamily;
+}
+
+p{
+    color: $fontColor;
+    font-size: $standardp; 
+    font-weight: 400;
+    font-family: $fontFamily;
+}
+
+/*----------------efectos--------------*/
+
+.aparecer{
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-name: "aparecer";
+}
+.animate__slideInUp{
+    animation-delay: 1s;
+    animation-duration: 2s;
+}
+@keyframes aparecer {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
