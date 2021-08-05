@@ -370,11 +370,11 @@ footer {
   padding: 10px;
   font-size: 20px;
   color: grey; }
-  .icon-bar a :hover .btn--twitter {
+  .icon-bar a :hover .btn--tw {
     color: #04ccf0; }
-  .icon-bar a :hover .btn--facebook {
+  .icon-bar a :hover .btn--fb {
     color: #2f00d7; }
-  .icon-bar a :hover .btn--youtube {
+  .icon-bar a :hover .btn--yt {
     color: red; }
-  .icon-bar a :hover .btn--instagram {
+  .icon-bar a :hover .btn--ig {
     color: #f908c4; }
