@@ -5,19 +5,36 @@ body{
     #objeto3d:hover {
         transform: rotateY(150deg);
     }
-    @if $switch == input {  background-image: $backGroundImage;
-    }@else { background-image: $bgImgNight;
-    }
+    @if $switch == unchecked {  background-image: $backGroundImage;
+    } @else { background-image: $bgImgNight;}
+}
+.offcanvas{
+    background-color: $violetColor;
+    color: $fontColor;
 }
 
-
-
+@media only screen and (max-width: 380px) {
+    .logo{
+        width: 70px;
+    }
+}
+@media only screen and (min-width: 380px) and (max-width: 990px) {
+    .logo{
+        width: 80px;
+    }
+}
+@media only screen and (min-width: 990px) {
+    .logo{
+        width: 120px;
+    }
+}
 .logo{
     transition: scale(2,2);
 }
 .logo:hover{
     transform: scale(1.2,1.2);
 }
+
 .switch {
     position: relative;
     display: inline-block;
@@ -52,7 +69,7 @@ body{
         transition: .4s;
     }
     input:checked + .slider {
-        background-color: rgb(24, 23, 23);
+        background-color: rgb(28, 27, 27);
     }
     
     input:focus + .slider {
@@ -89,18 +106,15 @@ footer{
         display: inline-flex;
     }
 }
-.icon-bar a {
+.icon-bar {
     display: inline;
     text-align: center;
     padding: 10px;
     font-size: 20px;
     color: grey;
-    :hover{
-        @each $red, $color in $social {
-            .btn--#{$red}{
-                color:$color;
-            }
-        }
+}
+@each $red,$color in $social{
+    :hover.btn--#{$red}{
+        color:$color;
     }
 }
-

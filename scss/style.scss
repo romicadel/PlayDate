@@ -2,23 +2,29 @@ $violetColor: #7078F1;
 $blueColor: #89C6FF;
 $fontColor: whitesmoke;
 $fontFamily: "Poppins",sans-serif;
-$backGroundImage: url(../Images/Desktop3.png);
-$bgImgNight: url(../Images/Desktop4.png);
-$fontSizeBig: calc(1em + 5vw);
+$backGroundImage: url(../images/desktop3.png);
+$bgImgNight: url(../images/desktop4.png);
+$fontSizeBig: calc(1em + 4vw);
 $standardp: 20px;
-$switch: input ; 
+$switch: unchecked ; 
 $stripes: stripe1, stripe3;
 $social: (
-    tw: rgb(4, 204, 240) ,
-    fb:  rgb(47, 0, 215) ,
-    yt: red,
-    ig: rgb(249, 8, 196),
+    tw: rgb(7, 189, 222) ,
+    fb: rgb(31, 1, 143) ,
+    yt: rgb(211, 2, 2),
+    ig: rgb(191, 3, 150),
 ); /*--ver en body&footer resto del mapa--*/
+
 
 @import "fonts";
 @import "buttons";
 @import "paginas";
 @import "body&footer";
+
+@keyframes aparecer{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
 
 
 

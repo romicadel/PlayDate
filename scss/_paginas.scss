@@ -1,60 +1,57 @@
 /*---------------- Index --------------*/
 
+nav{
+    ul{
+        li {
+            a {
+                font-family: $fontFamily;
+                font-weight: bold;
+                color: $blueColor;
+            } 
+        }
+    }
+    ul .dropdown-menu{
+        background-color: $blueColor;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;  
+    }
+    ul li:hover .dropdown-menu{
+        display: block;
+        z-index: 1;
+    }
+    a:link , a:visited {
+        color: $fontColor;
+        padding: auto;
+        text-align: left;
+        text-decoration: none;
+        display: block;
+    }
+    ul a:hover{
+        color: $violetColor;
+        background-color: $blueColor;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    a:active {
+        color: $violetColor;
+        background-color: $blueColor;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    ul .dropdown-item:hover, :active{ 
+        color: $blueColor;
+        background-color: $violetColor;
+    }
+}
 
 .containerHero{
     height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: row wrap;
+    padding-left: 1vw;
+    margin-top: 10vh;
+    justify-content: space-evenly;
 }
-nav{
-    justify-content: center;
-    align-items: flex-end;
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        li {
-            display: inline-block;
-            position: relative;
-            a {
-                text-align: center;
-                padding: 50px 16px;
-                font-family: $fontFamily;
-                font-weight: bold;
-            } 
-        }
-    }
-    ul ul{
-        position: absolute;
-        display: none;;
-        background-color: $violetColor;
-        width: 100%;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;  
-        ul ul li {
-            display: block;
-            text-align: center;
-            position: relative;
-        }
-    }
-    ul li:hover ul{
-        display: block;
-        z-index: 1;
-    }
-    a:link , a:visited {
-        color: $fontColor;
-        padding: 14px 25px;
-        text-align: left;
-        text-decoration: none;
-        display: block;
-    }
-    ul a:hover , a:active {
-        color: $violetColor;
-        background-color: $blueColor;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    }
-}
+
 .article{
     display: flex;
     flex-direction: column;
@@ -67,6 +64,9 @@ nav{
     margin-top: 4rem;
     padding-top: 4rem;
     padding-bottom: 2rem;
+    animation-delay: 3s;
+    animation-duration: 4s;
+    animation-name: "aparecer";
     .article__exterior{
         display: flex;
         flex-direction: row;
@@ -131,26 +131,53 @@ nav{
         max-height: 900px;
         min-width: 200px;
         object-fit: cover;
+        position: relative;
+        width: 50%;
+        max-width: 300px;
     }
-    .foto--grid___img:hover {
-        opacity: 0.8;
-        transform: scale(1.2,1.2);
+    .imageGrid{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .overlay {
+        position: absolute; 
+        bottom: 0; 
+        background: linear-gradient(180deg, rgba(24, 23, 23, 0) 15%, rgb(26, 25, 25) 85%); /* Black see-through */
+        color: #f1f1f1; 
+        width: 100%;
+        transition: .5s ease;
+        opacity:0;
+        color: white;
+        font-family: $fontFamily;
+        font-size: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+    .foto--grid___img:hover .overlay{
+        opacity: 1;
     }
 }
 @each $stripe in $stripes{
     .#{stripe}-BgColor{
         background-color: $violetColor;
         color: whitesmoke;
+        padding-left: 5px;
+        
     }
 }
 
 #sectionActividades{
     padding-top: 1em; 
     padding-bottom: 1em;
+    .ulActividades{
+        list-style-type: none;
+        padding-left: 5px;
+    }
     .nav-link {
         color: $violetColor;
         font-family: $fontFamily;
-        background-color: rgb(16, 15, 15);
+        background-color: rgb(36, 35, 35);
         padding: 10px;
     }
     .active{
@@ -159,10 +186,22 @@ nav{
         font-family: $fontFamily;
         font-size: 18px;
         padding: 20px;
+        border: none;
     }
 }
 
 /*----------------------- Contacto -------------------*/
+@media (max-width: 375px) {
+    iframe{
+        width: 200px;
+        height: auto;
+    }
+    .find-widget{
+        margin-left: 10px;
+        padding-left: 10px;
+        padding-bottom: 20px;
+    }
+}
 .find-widget{
     font-family: $fontFamily;
     font-size: 16px;
@@ -184,14 +223,12 @@ nav{
 /*----------------------- Registro -------------------*/
 /*--------- Card ----------*/
 
-.cardRegistro{
-    width: 423px;
-    height: 651px;   
+.card{
     background: #FFFFFF;
     box-shadow: 0px 2.88889px 8.66667px rgba(0, 0, 0, 0.25);
     border-radius: 7.22223px;  
-    margin: 4em;
-    justify-content: center;
+    width: 23rem;
+    height: fit-content;
     .card-title{
         color: $violetColor; 
         font-size: 30px;
@@ -203,12 +240,8 @@ nav{
     }
     .textEnd{
         display: inline;
-        margin: 10px;
         color: grey;
         font-size: 14px;
-        justify-content: center; 
-        margin: 10px; 
-        align-items: center;
     }
     
     .socialR{
@@ -216,9 +249,16 @@ nav{
         flex-flow: row wrap;
         justify-content: space-around;
         align-items: center;
-    }
-    .btn-light:hover{
-        box-shadow: 0px 3.01656px 7.5414px rgba(0, 0, 0, 0.08);
+        .btnLog{
+            background-color: rgb(240, 239, 239);
+            border: grey;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+        }
+        .btnLog:hover{
+            box-shadow: 1px 3.01656px 7.5414px rgba(46, 46, 46, 0.406);
+        }
     }
     .divider-text {
         position: relative;
@@ -245,10 +285,16 @@ nav{
         z-index: 0;
     }
     .form-control-text{
-        margin: 5px;
+        margin: 0px;
     }
     .fa-user{
         padding: auto;
+    }
+    .form-group{
+        height:38px ;
+    } 
+    .input-group{
+        height:38px ;
     }
 }
 
